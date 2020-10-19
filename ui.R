@@ -18,7 +18,10 @@ dados = fread("GRC_UNB.csv", encoding = "UTF-8")
 
 data = dados$data
 
-
+citacao = "<h3>Como citar?</h3> <br> <p>Gustavo ALVES, Carlos Denner dos SANTOS; 2020.
+<b>Painel Unificado da Adoção de Práticas Gerenciais pelo Órgãos Públicos Federais Brasileiros: uma base de dados integrativa do SIAPE, SIORG, SIOP, e o levantamento de governança do TCU</b>.
+Disponível em <a href='https://grc-unb.github.io/post.html'>https://grc-unb.github.io/post.html</a>
+</p>"
 shinyUI(dashboardPage(
     skin = "black",
     # Application title
@@ -58,6 +61,7 @@ shinyUI(dashboardPage(
         ),
         # Dentro de um layout vertical, insere os gráficos e tabelas
         verticalLayout(plotlyOutput("grafico"), #
+                       HTML(citacao),
                        dataTableOutput("tabela"))
     )
 ))

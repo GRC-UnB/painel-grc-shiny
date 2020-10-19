@@ -89,6 +89,8 @@ shinyServer(function(input, output) {
                 hovermode = "x unified"
             )
     })
+    
+    
     # Exibição da tabela com o data table
     output$tabela <- renderDataTable({
         dados_tabela()
